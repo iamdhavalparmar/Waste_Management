@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Waste Management</string>
+    <string name="login">Login</string>
+    <string name="signup">SignUp</string>
+    <string name="already_acc">Already Have An Account ?</string>
 </resources>
