@@ -3,5 +3,10 @@
     <string name="login">Login</string>
     <string name="signup">SignUp</string>
     <string name="already_acc">Already Have An Account ?</string>
+
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="notaccount">Do Not Have An Account ?</string>
+
 </resources>
