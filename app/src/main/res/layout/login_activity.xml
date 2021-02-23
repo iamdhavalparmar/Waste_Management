@@ -10,6 +10,7 @@
     android:theme="@style/Theme.AppCompat.NoActionBar">
 
     <TextView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -32,7 +33,7 @@
         android:textColorHint="@color/black">
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="     Enter Email"
@@ -51,7 +52,7 @@
         android:layout_margin="25dp"
         android:textColorHint="@color/black">
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="     Enter Password"

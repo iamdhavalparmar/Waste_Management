@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/cardview_light_background"
+    android:background="@color/extra_light_green"
    >
 <LinearLayout
     android:layout_width="match_parent"
@@ -31,7 +31,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/black"
-            android:text="Lio Jorge"/>
+            android:text="Lio Jorge"
+            android:fontFamily="@font/montserrat_regular"
+            android:textSize="22sp"/>
 
     </LinearLayout>
 

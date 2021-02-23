@@ -8,5 +8,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="notaccount">Do Not Have An Account ?</string>
-
+    <string name="date">Thursday, </string>
+    <string name="date2"> 22nd February, 2021</string>
+    <string name="view"><u>View</u></string>
 </resources>
