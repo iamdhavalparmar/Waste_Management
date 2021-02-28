@@ -83,13 +83,19 @@
                         android:src="@drawable/meat"
                         android:id="@+id/navigation"/>
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Lio Jorge (Id: CS001)"
-                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
                         android:fontFamily="@font/montserrat_semibold"
-                        android:textSize="@dimen/_20sdp"
+                        android:textSize="@dimen/_18sdp"
                         android:textColor="@color/black" />
+                    <ImageView
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:src="@drawable/ic_logout"
+                        android:id="@+id/logout_image"/>
                 </androidx.appcompat.widget.Toolbar>
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -115,7 +121,11 @@
         </androidx.core.widget.NestedScrollView>
 
 
-
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_56sdp"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_navigation"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>
     <com.google.android.material.navigation.NavigationView

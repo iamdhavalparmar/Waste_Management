@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.wastemanagement.Adapters.DashboardAdapter;
 import com.example.wastemanagement.Admin.AddBins;
+import com.example.wastemanagement.Admin.Feedback_Complain;
 import com.example.wastemanagement.Admin.ManageBins;
 import com.example.wastemanagement.Models.DashboardData;
 import com.google.android.material.navigation.NavigationView;
@@ -103,7 +104,7 @@ public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyI
                 R.drawable.ic_manage_alerts,R.drawable.ic_bins,R.drawable.ic_staff_list,
                 R.drawable.ic_user_list,R.drawable.ic_feedback,R.drawable.ic_complaint};
 
-        DashboardData item = new DashboardData(image[0],"Manage Alerts");
+        DashboardData item = new DashboardData(image[0],"View Alerts");
         itemList.add(item);
 
         DashboardData item1 = new DashboardData(image[1],"Manage Bins");
@@ -134,8 +135,15 @@ public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyI
     @Override
     public void onItemClick(DashboardData item) {
 
-        Toast.makeText(this, item.getText(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(Dashboard.this, ManageBins.class);
-        startActivity(intent);
+        if(item.getText().toString().equals("Manage Bins")) {
+            Intent intent = new Intent(Dashboard.this, ManageBins.class);
+            startActivity(intent);
+        }else if(item.getText().toString().equals("Feedback")){
+            Intent intent = new Intent(Dashboard.this, Feedback_Complain.class);
+            startActivity(intent);
+        }else if(item.getText().toString().equals("Complaints")){
+            Intent intent = new Intent(Dashboard.this, Feedback_Complain.class);
+            startActivity(intent);
+        }
     }
 }

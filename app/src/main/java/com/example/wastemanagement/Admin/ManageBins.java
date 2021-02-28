@@ -42,6 +42,14 @@ public class ManageBins extends AppCompatActivity implements ManageBinsAdapter.M
         ManageBinsAdapter manageBinsAdapter = new ManageBinsAdapter(itemList,getApplicationContext());
         binsrecycler.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         binsrecycler.setAdapter(manageBinsAdapter);
+        addbins = findViewById(R.id.addbins);
+        addbins.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it =new Intent(ManageBins.this,AddBins.class);
+                startActivity(it);
+            }
+        });
 
     }
 
@@ -57,8 +65,7 @@ public class ManageBins extends AppCompatActivity implements ManageBinsAdapter.M
 
         BinsData item2 = new BinsData("1230","NITC",image[0]);
         itemList.add(item2);
-
-
+        
     }
 
     @Override

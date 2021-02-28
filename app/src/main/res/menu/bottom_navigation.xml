@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_search"
+        android:title="Home"
+        android:icon="@drawable/ic_bins" />
+    <item android:id="@+id/action_settings"
+        android:title="Manage Profile"
+        android:icon="@drawable/ic_manage_profile" />
+    <item android:id="@+id/action_navigation"
+        android:title="About US"
+        android:icon="@drawable/ic_about_us" />
+</menu>
