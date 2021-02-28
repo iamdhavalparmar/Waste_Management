@@ -6,20 +6,25 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.wastemanagement.Adapters.DashboardAdapter;
+import com.example.wastemanagement.Admin.AddBins;
+import com.example.wastemanagement.Admin.ManageBins;
+import com.example.wastemanagement.Models.DashboardData;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dashboard extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyItemonClickLister {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageView navigation;
@@ -54,7 +59,7 @@ public class Dashboard extends AppCompatActivity {
         });
 
         recyclerView = findViewById(R.id.dashboard_cardview_rec);
-        DashboardAdapter dashboardAdapter = new DashboardAdapter(itemList,getApplicationContext());
+        DashboardAdapter dashboardAdapter = new DashboardAdapter(itemList,getApplicationContext(),Dashboard.this);
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
         recyclerView.setAdapter(dashboardAdapter);
 
@@ -124,5 +129,13 @@ public class Dashboard extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
         return true;
 
+    }
+
+    @Override
+    public void onItemClick(DashboardData item) {
+
+        Toast.makeText(this, item.getText(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Dashboard.this, ManageBins.class);
+        startActivity(intent);
     }
 }

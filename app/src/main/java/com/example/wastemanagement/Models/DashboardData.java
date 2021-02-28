@@ -1,8 +1,10 @@
-package com.example.wastemanagement;
+package com.example.wastemanagement.Models;
 
 import android.widget.ImageView;
 
-public class DashboardData {
+import java.io.Serializable;
+
+public class DashboardData implements Serializable {
     int image;
     String text;
 

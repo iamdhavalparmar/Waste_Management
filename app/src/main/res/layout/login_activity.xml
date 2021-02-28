@@ -37,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="     Enter Email"
+            android:text="admin"
             android:ems="10"
             android:drawableStart="@drawable/ic_face_24px"
             android:inputType="textEmailAddress"
@@ -57,6 +58,8 @@
             android:layout_height="wrap_content"
             android:hint="     Enter Password"
             android:ems="10"
+            android:text="admin"
+
             android:backgroundTint="@color/black"
             android:drawableStart="@drawable/ic_lock_24px"
             android:inputType="textPassword"
