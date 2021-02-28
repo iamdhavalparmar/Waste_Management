@@ -28,7 +28,7 @@ import java.util.List;
 public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyItemonClickLister {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    ImageView navigation;
+    ImageView navigation,logout;
     Toolbar toolbar;
     RecyclerView recyclerView;
     List itemList = new ArrayList();
@@ -58,7 +58,18 @@ public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyI
                 drawerLayout.openDrawer(Gravity.LEFT,true);
             }
         });
-
+        logout = findViewById(R.id.logout_image);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(Dashboard.this, LoginActivity.class);
+                it.putExtra("Role", "student");
+                it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                        Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(it);
+                finish();
+            }
+        });
         recyclerView = findViewById(R.id.dashboard_cardview_rec);
         DashboardAdapter dashboardAdapter = new DashboardAdapter(itemList,getApplicationContext(),Dashboard.this);
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
