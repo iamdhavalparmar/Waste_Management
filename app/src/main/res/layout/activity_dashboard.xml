@@ -125,7 +125,13 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_56sdp"
         android:layout_gravity="bottom"
-        app:menu="@menu/bottom_navigation"/>
+        app:menu="@menu/bottom_navigation"
+        android:background="@color/light_dark_green"
+        android:backgroundTint="@color/dark_green"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        android:theme="@style/bottomNavigation"
+        />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>
     <com.google.android.material.navigation.NavigationView

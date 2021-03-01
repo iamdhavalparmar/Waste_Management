@@ -19,6 +19,7 @@ import com.example.wastemanagement.Adapters.DashboardAdapter;
 import com.example.wastemanagement.Admin.AddBins;
 import com.example.wastemanagement.Admin.Feedback_Complain;
 import com.example.wastemanagement.Admin.ManageBins;
+import com.example.wastemanagement.Admin.UsersList;
 import com.example.wastemanagement.Models.DashboardData;
 import com.google.android.material.navigation.NavigationView;
 
@@ -154,6 +155,10 @@ public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyI
             startActivity(intent);
         }else if(item.getText().toString().equals("Complaints")){
             Intent intent = new Intent(Dashboard.this, Feedback_Complain.class);
+            startActivity(intent);
+        }
+        else if(item.getText().toString().equals("Users List")){
+            Intent intent = new Intent(Dashboard.this, UsersList.class);
             startActivity(intent);
         }
     }

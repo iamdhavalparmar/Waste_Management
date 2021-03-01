@@ -6,4 +6,7 @@
         <item name="background">@color/black</item>
         <item name="android:layout_marginBottom">@dimen/_10sdp</item>
     </style>
+    <style name="bottomNavigation" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="fontFamily">@font/montserrat_regular</item>
+    </style>
 </resources>
