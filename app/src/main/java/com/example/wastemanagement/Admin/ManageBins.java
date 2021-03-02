@@ -54,18 +54,15 @@ public class ManageBins extends AppCompatActivity implements ManageBinsAdapter.M
     }
 
     private void dummydata() {
-        int[] image = new int[]{
-                R.drawable.ic_black_bins};
-
-        BinsData item = new BinsData("1230","NITC",image[0]);
+        BinsData item = new BinsData("1230","NITC","70%");
         itemList.add(item);
 
-        BinsData item1 = new BinsData("1230","NITC",image[0]);
+        BinsData item1 = new BinsData("1230","NITC","60%");
         itemList.add(item1);
 
-        BinsData item2 = new BinsData("1230","NITC",image[0]);
+        BinsData item2 = new BinsData("1230","NITC","70%");
         itemList.add(item2);
-        
+
     }
 
     @Override

@@ -9,44 +9,45 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.wastemanagement.Models.BinsData;
 import com.example.wastemanagement.R;
 
 import java.util.List;
 
-public class ManageBinsAdapter extends RecyclerView.Adapter<ManageBinsAdapter.ViewHolder>{
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class ViewAlertsAdapter extends RecyclerView.Adapter<ViewAlertsAdapter.ViewHolder> {
     List itemList;
     Context context;
 
-
-    public ManageBinsAdapter(List itemList, Context context) {
+    public ViewAlertsAdapter(List itemList, Context context) {
         this.itemList = itemList;
         this.context = context;
-
-    }
-
-    public interface MyitemOnClickLister{
-        void onItemClick(BinsData item);
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.manage_bins_row, parent, false);
-        return new ViewHolder(view);
+        return new ViewAlertsAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewAlertsAdapter.ViewHolder holder, int position) {
         BinsData binsData1 = (BinsData) itemList.get(position);
         holder.imageView.setImageResource(R.drawable.ic_bins);
         holder.binid.setText(binsData1.getBinId());
         holder.binname.setText(binsData1.getBinAddress());
         holder.bin_level.setText(binsData1.getBin_level());
 
+        if(binsData1.getAdapterstatus()==1){
+            if(binsData1.getStatus()==0){
+                holder.linearLayout.setBackgroundColor(Color.rgb(250,128,114));
+            }else if(binsData1.getStatus()==1){
+                holder.linearLayout.setBackgroundColor(Color.rgb(255,255,102));
+            }
+        }
     }
 
     @Override

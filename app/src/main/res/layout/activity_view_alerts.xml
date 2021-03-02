@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.UsersList"
+    tools:context=".Admin.ViewAlerts"
     android:background="@drawable/gradient_bg">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_feedback"
@@ -17,12 +17,13 @@
             android:layout_height="@dimen/_25sdp"
             android:layout_margin="@dimen/_10sdp"
             android:src="@drawable/ic_back"
-            android:id="@+id/backbutton_users"/>
+            android:id="@+id/backbutton_view_alerts"/>
 
     </androidx.appcompat.widget.Toolbar>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/toolbar_feedback"
-        android:id="@+id/users_list_rec"
+        android:id="@+id/view_alerts_rec"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:padding="@dimen/_8sdp"/>
 </RelativeLayout>
