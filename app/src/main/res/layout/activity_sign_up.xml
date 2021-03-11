@@ -33,6 +33,7 @@
         android:paddingTop="10dp">
 
         <EditText
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="     Enter Name"
@@ -56,6 +57,7 @@
         android:paddingTop="10dp">
 
         <EditText
+            android:id="@+id/email_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="     Enter Email"
@@ -79,6 +81,7 @@
         android:paddingTop="10dp">
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="     Enter Password"
@@ -102,6 +105,7 @@
         android:paddingTop="10dp">
 
         <EditText
+            android:id="@+id/repeat_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="     ReEnter Password"

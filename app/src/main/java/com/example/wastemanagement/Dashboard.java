@@ -23,6 +23,7 @@ import com.example.wastemanagement.Admin.UsersList;
 import com.example.wastemanagement.Admin.ViewAlerts;
 import com.example.wastemanagement.Models.DashboardData;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,11 +36,14 @@ public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyI
     RecyclerView recyclerView;
     List itemList = new ArrayList();
     TextView textView;
+    String role;
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        String role = getIntent().getStringExtra("Role");
+        role = getIntent().getStringExtra("Role");
+        firebaseAuth = FirebaseAuth.getInstance();
         if(role.equals("admin"))
             dummydata();
         else if(role.equals("staff"))
@@ -64,10 +68,8 @@ public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyI
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                firebaseAuth.signOut();
                 Intent it = new Intent(Dashboard.this, LoginActivity.class);
-                it.putExtra("Role", "student");
-                it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
-                        Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(it);
                 finish();
             }
@@ -147,22 +149,26 @@ public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyI
 
     @Override
     public void onItemClick(DashboardData item) {
+        if(role.equals("admin")) {
+            if (item.getText().toString().equals("Manage Bins")) {
+                Intent intent = new Intent(Dashboard.this, ManageBins.class);
+                startActivity(intent);
+            } else if (item.getText().toString().equals("Feedback")) {
+                Intent intent = new Intent(Dashboard.this, Feedback_Complain.class);
+                startActivity(intent);
+            } else if (item.getText().toString().equals("Complaints")) {
+                Intent intent = new Intent(Dashboard.this, Feedback_Complain.class);
+                startActivity(intent);
+            } else if (item.getText().toString().equals("Users List")) {
+                Intent intent = new Intent(Dashboard.this, UsersList.class);
+                startActivity(intent);
+            } else if (item.getText().toString().equals("View Alerts")) {
+                Intent intent = new Intent(Dashboard.this, ViewAlerts.class);
+                startActivity(intent);
+            }
+        }
+        else if(role.equals("student")){
 
-        if(item.getText().toString().equals("Manage Bins")) {
-            Intent intent = new Intent(Dashboard.this, ManageBins.class);
-            startActivity(intent);
-        }else if(item.getText().toString().equals("Feedback")){
-            Intent intent = new Intent(Dashboard.this, Feedback_Complain.class);
-            startActivity(intent);
-        }else if(item.getText().toString().equals("Complaints")){
-            Intent intent = new Intent(Dashboard.this, Feedback_Complain.class);
-            startActivity(intent);
-        }else if(item.getText().toString().equals("Users List")){
-            Intent intent = new Intent(Dashboard.this, UsersList.class);
-            startActivity(intent);
-        }else if(item.getText().toString().equals("View Alerts")){
-            Intent intent = new Intent(Dashboard.this, ViewAlerts.class);
-            startActivity(intent);
         }
     }
 }

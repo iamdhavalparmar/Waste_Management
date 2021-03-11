@@ -7,6 +7,6 @@
         android:title="Manage Profile"
         android:icon="@drawable/ic_manage_profile" />
     <item android:id="@+id/action_navigation"
-        android:title="About US"
+        android:title="About Us"
         android:icon="@drawable/ic_about_us" />
 </menu>
