@@ -44,7 +44,7 @@
                     android:textSize="@dimen/_17sdp"
                     android:id="@+id/bin_level"
                     android:fontFamily="@font/montserrat_semibold"
-                    android:text="80%"
+
                     android:textAlignment="center"/>
             </LinearLayout>
             <LinearLayout

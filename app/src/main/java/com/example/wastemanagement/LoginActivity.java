@@ -60,27 +60,26 @@ public class LoginActivity extends AppCompatActivity {
                 firebaseAuth.signInWithEmailAndPassword(id,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        firebaseUser = firebaseAuth.getCurrentUser();
+                        String adminemail = firebaseUser.getEmail().toString();
+                        if(adminemail.equals("admin@nitc.ac.in")){
+                            Intent it = new Intent(LoginActivity.this, Dashboard.class);
+                            it.putExtra("Role", "admin");
+                            startActivity(it);
+                            finish();
+                        }
+                        else if(firebaseUser.isEmailVerified()) {
                             if (task.isSuccessful()) {
-                                firebaseUser = firebaseAuth.getCurrentUser();
-                                String adminemail = firebaseUser.getEmail().toString();
-                                if(firebaseUser.isEmailVerified()) {
-                                    Intent it = new Intent(LoginActivity.this, Dashboard.class);
-                                    it.putExtra("Role", "student");
-                                    startActivity(it);
-                                    finish();
-                                }
-                                else if(adminemail.equals("admin@nitc.ac.in")){
-                                    Intent it = new Intent(LoginActivity.this, Dashboard.class);
-                                    it.putExtra("Role", "admin");
-                                    startActivity(it);
-                                    finish();
-                                }else{
-                                    Toast.makeText(LoginActivity.this, "Verify Your Email", Toast.LENGTH_SHORT).show();
-                                }
+                                Intent it = new Intent(LoginActivity.this, Dashboard.class);
+                                it.putExtra("Role", "student");
+                                startActivity(it);
+                                finish();
                             } else {
                                 Toast.makeText(LoginActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
-
+                        }else{
+                            Toast.makeText(LoginActivity.this, "Verify Your Email", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
             }

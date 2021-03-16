@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.Feedback_Complain"
-    android:background="@drawable/gradient_bg">
+    tools:context=".Admin.ManageStaff">
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_feedback"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:titleTextAppearance="@dimen/_12sdp"
@@ -18,14 +17,28 @@
             android:layout_height="@dimen/_25sdp"
             android:layout_margin="@dimen/_10sdp"
             android:src="@drawable/ic_back"
-            android:id="@+id/backbutton_feedback"/>
+            android:id="@+id/backbutton"/>
 
     </androidx.appcompat.widget.Toolbar>
+    <Button
+        android:id="@+id/addstaff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="Add Staff"
+        android:textColor="#ecffe2"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:layout_below="@+id/toolbar"
+        android:background="@drawable/button_rounded"
+        android:fontFamily="@font/montserrat_regular"
+        />
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@id/toolbar_feedback"
-        android:id="@+id/feedback_complain_rec"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/_10sdp"/>
+        android:layout_margin="@dimen/_10sdp"
+        android:id="@+id/staffrecycler"
+        android:layout_below="@+id/addstaff"/>
+
 
 </RelativeLayout>

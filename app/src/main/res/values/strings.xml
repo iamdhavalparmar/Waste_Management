@@ -11,6 +11,5 @@
     <string name="date">Thursday, </string>
     <string name="date2"> 22nd February, 2021</string>
     <string name="view"><u>View</u></string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mapbox_key">pk.eyJ1IjoiaWFtZGhhdmFscGFybWFyIiwiYSI6ImNrbHBjdnhsYTBrb3gyb253bzNwbmVmajAifQ.p3QeVFuLa5jL447kP99QIw</string>
 </resources>

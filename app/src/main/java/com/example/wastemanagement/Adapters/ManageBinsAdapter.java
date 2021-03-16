@@ -54,7 +54,7 @@ public class ManageBinsAdapter extends RecyclerView.Adapter<ManageBinsAdapter.Vi
         return itemList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView binid,binname,bin_level;
         LinearLayout linearLayout;

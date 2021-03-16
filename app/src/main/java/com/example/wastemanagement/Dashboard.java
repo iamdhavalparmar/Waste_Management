@@ -19,6 +19,7 @@ import com.example.wastemanagement.Adapters.DashboardAdapter;
 import com.example.wastemanagement.Admin.AddBins;
 import com.example.wastemanagement.Admin.Feedback_Complain;
 import com.example.wastemanagement.Admin.ManageBins;
+import com.example.wastemanagement.Admin.ManageStaff;
 import com.example.wastemanagement.Admin.UsersList;
 import com.example.wastemanagement.Admin.ViewAlerts;
 import com.example.wastemanagement.Models.DashboardData;
@@ -53,17 +54,7 @@ public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyI
 //        textView = findViewById(R.id.temp_text);
 //        textView.setText(role);
         drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        navigation = findViewById(R.id.navigation);
-        navigation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.openDrawer(Gravity.LEFT,true);
-            }
-        });
+        
         logout = findViewById(R.id.logout_image);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,14 +129,7 @@ public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyI
         itemList.add(item5);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
-        return true;
 
-    }
 
     @Override
     public void onItemClick(DashboardData item) {
@@ -153,10 +137,14 @@ public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyI
             if (item.getText().toString().equals("Manage Bins")) {
                 Intent intent = new Intent(Dashboard.this, ManageBins.class);
                 startActivity(intent);
-            } else if (item.getText().toString().equals("Feedback")) {
+            } else if (item.getText().toString().equals("Manage Staff")) {
+                Intent intent = new Intent(Dashboard.this, ManageStaff.class);
+                startActivity(intent);
+            }
+            else if (item.getText().toString().equals("Feedback")) {
                 Intent intent = new Intent(Dashboard.this, Feedback_Complain.class);
                 startActivity(intent);
-            } else if (item.getText().toString().equals("Complaints")) {
+            }else if (item.getText().toString().equals("Complaints")) {
                 Intent intent = new Intent(Dashboard.this, Feedback_Complain.class);
                 startActivity(intent);
             } else if (item.getText().toString().equals("Users List")) {

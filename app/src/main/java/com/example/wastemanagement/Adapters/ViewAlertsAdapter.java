@@ -56,9 +56,11 @@ public class ViewAlertsAdapter extends RecyclerView.Adapter<ViewAlertsAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         ImageView imageView;
         TextView binid,binname,bin_level;
         LinearLayout linearLayout;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             linearLayout = itemView.findViewById(R.id.manage_bins_linear);

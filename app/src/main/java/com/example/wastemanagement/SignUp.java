@@ -73,6 +73,7 @@ public class SignUp extends AppCompatActivity {
                     isDataValid = false;
                     password.setError("Use Atleast 8 Characters");
                 }else{
+
                     if(password.getText().toString().equals(repeatpassword.getText().toString())){
                         isDataValid=true;
                     }else{
@@ -94,14 +95,15 @@ public class SignUp extends AppCompatActivity {
                                }).addOnFailureListener(new OnFailureListener() {
                                    @Override
                                    public void onFailure(@NonNull Exception e) {
-                                       Log.d("Email Verification", "onFailure: ");
+                                       Log.d("Email Verification", e.getMessage());
+                                       Toast.makeText(SignUp.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                    }
                                });
                                userID = firebaseAuth.getCurrentUser().getUid() ;
                                DocumentReference documentReference = firestore.collection("users").document(userID);
                                Map<String,Object> user = new HashMap<>();
                                user.put("name",name.getText().toString().trim());
-                               user.put("role","admin");
+                               user.put("role","student");
                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                    @Override
                                    public void onSuccess(Void aVoid) {
