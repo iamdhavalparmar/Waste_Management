@@ -10,10 +10,24 @@
     android:padding="10dp"
     android:layout_gravity="center">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:titleTextAppearance="@dimen/_12sdp"
+        app:layout_collapseMode="pin">
+        <ImageView
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:src="@drawable/ic_back"
+        android:id="@+id/backbutton"/>
+    </androidx.appcompat.widget.Toolbar>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Staff"
+        android:text="Add Staff"
         android:textSize="40sp"
         android:textAlignment="textStart"
         android:fontFamily="@font/montserrat_black"
@@ -32,13 +46,12 @@
         android:paddingTop="10dp">
 
         <EditText
-            android:id="@+id/user_id"
+            android:id="@+id/staff_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="     Enter UserId"
+            android:hint="     Enter Email"
             android:drawableLeft="@drawable/ic_face_24px"
             android:ems="10"
-
             android:backgroundTint="@color/black"
             android:inputType="textEmailAddress"
             android:textColor="@color/black"
@@ -56,7 +69,7 @@
         android:paddingTop="10dp">
 
         <EditText
-            android:id="@+id/name"
+            android:id="@+id/staff_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="     Enter Username"
@@ -80,36 +93,11 @@
         android:paddingTop="10dp">
 
         <EditText
-            android:id="@+id/email_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="     Enter Email"
-            android:drawableLeft="@drawable/ic_face_24px"
-            android:ems="10"
-            android:backgroundTint="@color/black"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/black"
-            android:fontFamily="@font/montserrat_light"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:textColorHint="@color/black"
-        android:paddingTop="10dp">
-
-        <EditText
-            android:id="@+id/password"
+            android:id="@+id/staff_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="     Enter Phone"
-            android:drawableLeft="@drawable/ic_home"
+            android:drawableLeft="@drawable/ic_call"
             android:ems="10"
             android:backgroundTint="@color/black"
             android:inputType="textPassword"
@@ -129,7 +117,7 @@
         android:paddingTop="10dp">
 
         <EditText
-            android:id="@+id/repeat_password"
+            android:id="@+id/staff_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="     Enter Password"
@@ -142,7 +130,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/signup_button"
+        android:id="@+id/staff_submit_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -154,6 +142,4 @@
         android:textAllCaps="false"
         android:background="@drawable/button_rounded"
         android:fontFamily="@font/montserrat_regular"/>
-
-
 </LinearLayout>

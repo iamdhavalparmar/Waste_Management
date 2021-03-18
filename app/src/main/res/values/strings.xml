@@ -12,4 +12,5 @@
     <string name="date2"> 22nd February, 2021</string>
     <string name="view"><u>View</u></string>
     <string name="mapbox_key">pk.eyJ1IjoiaWFtZGhhdmFscGFybWFyIiwiYSI6ImNrbHBjdnhsYTBrb3gyb253bzNwbmVmajAifQ.p3QeVFuLa5jL447kP99QIw</string>
+    <string name="resend">Resend Link</string>
 </resources>

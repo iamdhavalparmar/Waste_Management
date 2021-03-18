@@ -46,6 +46,7 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View view) {
                 Intent it = new Intent(SignUp.this,LoginActivity.class);
                 startActivity(it);
+                finish();
             }
         });
         name = findViewById(R.id.name);
@@ -67,11 +68,12 @@ public class SignUp extends AppCompatActivity {
                 }else{
                     isDataValid = false;
                     email.setError("Use NITC Id Only");
-
+                    return;
                 }
                 if(password.getText().toString().length()<8){
                     isDataValid = false;
                     password.setError("Use Atleast 8 Characters");
+                    return;
                 }else{
 
                     if(password.getText().toString().equals(repeatpassword.getText().toString())){
@@ -79,6 +81,7 @@ public class SignUp extends AppCompatActivity {
                     }else{
                         isDataValid= false;
                         repeatpassword.setError("Password Does Not Match");
+                        return;
                     }
                 }
                 if(isDataValid){
@@ -128,6 +131,7 @@ public class SignUp extends AppCompatActivity {
         if(field.getText().toString().isEmpty()) {
             isDataValid = false;
             field.setError("Required Field");
+            return;
         }
         else
             isDataValid= true;
