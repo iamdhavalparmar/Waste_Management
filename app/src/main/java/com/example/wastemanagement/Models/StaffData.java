@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 public class StaffData implements Serializable {
 
-    String staffid="";
-    String name = "";
+   public String name="";
+   public String phone="";
 
-    public StaffData(String staffid, String name) {
-        this.staffid = staffid;
+    public StaffData(String name, String phone) {
         this.name = name;
+        this.phone = phone;
     }
 }

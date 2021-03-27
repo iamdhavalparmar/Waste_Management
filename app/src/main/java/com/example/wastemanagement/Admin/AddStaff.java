@@ -93,7 +93,7 @@ public class AddStaff extends AppCompatActivity {
                                 String userId = firebaseAuth.getCurrentUser().getUid();
                                 DocumentReference documentReference = firestore.collection("users").document(userId);
                                 Map<String,Object> user = new HashMap<>();
-                                user.put("username",username.getText().toString().trim());
+                                user.put("name",username.getText().toString().trim());
                                 user.put("phone",phone.getText().toString().trim());
                                 user.put("role","staff");
                                 user.put("email",email.getText().toString().trim());
