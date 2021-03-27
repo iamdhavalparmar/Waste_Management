@@ -12,10 +12,7 @@
         android:layout_marginStart="8dp"
         android:text="Sophia Connors"
         android:textColor="#292929"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        android:textSize="16sp" />
     <TextView
         android:id="@+id/text2"
         android:layout_below="@id/textView"
@@ -24,8 +21,5 @@
         android:layout_marginStart="8dp"
         android:text="Sophia Connors"
         android:textColor="#292929"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        android:textSize="16sp" />
 </RelativeLayout>

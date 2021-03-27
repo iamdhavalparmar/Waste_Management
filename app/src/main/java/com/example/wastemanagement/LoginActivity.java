@@ -2,7 +2,6 @@ package com.example.wastemanagement;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.IntentCompat;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,8 +21,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends AppCompatActivity {
@@ -35,8 +32,6 @@ public class LoginActivity extends AppCompatActivity {
     String role;
     SharedPreferences sharedPreferences;
     public static final String filename = "login";
-    public static final String username = "username";
-    public static final String password_sh = "password";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +41,10 @@ public class LoginActivity extends AppCompatActivity {
         firebaseAuth = firebaseAuth.getInstance();
         resend = findViewById(R.id.resend_link);
         firestore = FirebaseFirestore.getInstance();
+        Encryption encryption = new Encryption();
+        encryption.encrypt("aakash",getApplicationContext());
         sharedPreferences = getSharedPreferences(filename, Context.MODE_PRIVATE);
+
         if(sharedPreferences.contains("username")){
             Log.d("sharedpref", "onCreate: came into sharedpref");
             role = sharedPreferences.getString("role","");

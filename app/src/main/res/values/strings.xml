@@ -13,4 +13,5 @@
     <string name="view"><u>View</u></string>
     <string name="mapbox_key">pk.eyJ1IjoiaWFtZGhhdmFscGFybWFyIiwiYSI6ImNrbHBjdnhsYTBrb3gyb253bzNwbmVmajAifQ.p3QeVFuLa5jL447kP99QIw</string>
     <string name="resend">Resend Link</string>
+    <string name="api_key">1224c17a-8a14-4ada-90f8-b4f096c485f9</string>
 </resources>

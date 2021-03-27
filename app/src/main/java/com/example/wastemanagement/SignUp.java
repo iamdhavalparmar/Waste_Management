@@ -4,15 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -49,6 +45,7 @@ public class SignUp extends AppCompatActivity {
                 finish();
             }
         });
+        Encryption encryption = new Encryption();
         name = findViewById(R.id.name);
         email = findViewById(R.id.email_id);
         password = findViewById(R.id.password);
@@ -72,7 +69,7 @@ public class SignUp extends AppCompatActivity {
                 }
                 if(password.getText().toString().length()<8){
                     isDataValid = false;
-                    password.setError("Use Atleast 8 Characters");
+                    password.setError("Use At least 8 Characters");
                     return;
                 }else{
 
@@ -93,7 +90,7 @@ public class SignUp extends AppCompatActivity {
                                firebaseUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                                    @Override
                                    public void onSuccess(Void aVoid) {
-                                       Toast.makeText(SignUp.this, "Verification Eamil Has Sent", Toast.LENGTH_SHORT).show();
+                                       Toast.makeText(SignUp.this, "Verification Email Has Sent", Toast.LENGTH_SHORT).show();
                                    }
                                }).addOnFailureListener(new OnFailureListener() {
                                    @Override
@@ -102,7 +99,7 @@ public class SignUp extends AppCompatActivity {
                                        Toast.makeText(SignUp.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                    }
                                });
-                               userID = firebaseAuth.getCurrentUser().getUid() ;
+                               userID = firebaseAuth.getCurrentUser().getUid();
                                DocumentReference documentReference = firestore.collection("users").document(userID);
                                Map<String,Object> user = new HashMap<>();
                                user.put("name",name.getText().toString().trim());
