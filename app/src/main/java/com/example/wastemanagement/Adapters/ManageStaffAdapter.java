@@ -4,9 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wastemanagement.Models.StaffData;
@@ -17,11 +19,16 @@ import java.util.List;
 public class ManageStaffAdapter extends RecyclerView.Adapter<ManageStaffAdapter.ViewHolder> {
     List itemList;
     Context context;
+    MyStaffListener listener;
 
-
-    public ManageStaffAdapter(List itemList, Context context) {
+    public ManageStaffAdapter(List itemList, Context context, MyStaffListener listener) {
         this.itemList = itemList;
         this.context = context;
+        this.listener = listener;
+    }
+
+    public interface MyStaffListener{
+        void onItemClick(StaffData staffData);
     }
 
 
@@ -37,6 +44,18 @@ public class ManageStaffAdapter extends RecyclerView.Adapter<ManageStaffAdapter.
         StaffData  sd = (StaffData) itemList.get(position);
         holder.name.setText(sd.name);
         holder.phone.setText(sd.phone);
+        holder.bin.setImageResource(R.drawable.ic_my_profile);
+        holder.cardstaffitemview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                itemList.remove(position);
+                listener.onItemClick(sd);
+                notifyDataSetChanged();
+
+            }
+        });
     }
 
 
@@ -47,10 +66,14 @@ public class ManageStaffAdapter extends RecyclerView.Adapter<ManageStaffAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView name,phone;
+        CardView cardstaffitemview;
+        ImageView bin;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.binid);
             phone = itemView.findViewById(R.id.binname);
+            bin = itemView.findViewById(R.id.bin);
+            cardstaffitemview = itemView.findViewById(R.id.cardstaffitemview);
         }
     }
 }

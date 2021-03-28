@@ -3,12 +3,14 @@ package com.example.wastemanagement;
 import android.content.Context;
 import android.util.Log;
 
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,6 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Encryption {
+
     String encrypt(String data,Context context){
         RequestQueue queue  = Volley.newRequestQueue(context);
         String url = "http://ec2-18-191-209-110.us-east-2.compute.amazonaws.com/encrypt.php";
