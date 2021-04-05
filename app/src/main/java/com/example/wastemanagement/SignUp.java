@@ -104,6 +104,7 @@ public class SignUp extends AppCompatActivity {
                                Map<String,Object> user = new HashMap<>();
                                user.put("name",name.getText().toString().trim());
                                user.put("role","student");
+                               user.put("email",email.getText().toString().trim());
                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                    @Override
                                    public void onSuccess(Void aVoid) {

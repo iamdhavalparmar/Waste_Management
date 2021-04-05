@@ -6,7 +6,7 @@
     android:padding="@dimen/_10sdp">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_height="@dimen/_90sdp"
         android:padding="@dimen/_8sdp"
         android:elevation="@dimen/_5sdp"
         app:cardCornerRadius="@dimen/_12sdp"
@@ -15,18 +15,78 @@
         android:focusable="true">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_50sdp"
-            android:background="@color/light_green">
-            <TextView
+            android:layout_height="@dimen/_100sdp"
+            android:background="@color/light_green"
+            android:orientation="vertical">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:id="@+id/feedback_complain_text"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_15sdp"
+                    android:text="Message: "
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textColor="@color/white"/>
+                <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/feedback_complain_text_name"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="@dimen/_15sdp"
-                android:text="Hello"
-                android:textAlignment="center"
+                android:text="message text"
                 android:fontFamily="@font/montserrat_regular"
                 android:textColor="@color/white"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_15sdp"
+                    android:text="Email: "
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/feedback_complain_text_id"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_15sdp"
+                    android:text="email id"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_15sdp"
+                    android:text="Time: "
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/feedback_complain_text_time"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_15sdp"
+                    android:text="time"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
