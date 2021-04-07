@@ -25,6 +25,7 @@ import com.example.wastemanagement.Admin.ManageStaff;
 import com.example.wastemanagement.Admin.UsersList;
 import com.example.wastemanagement.Admin.ViewAlerts;
 import com.example.wastemanagement.Models.DashboardData;
+import com.example.wastemanagement.Student.Complaint;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -162,7 +163,10 @@ public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyI
             }
         }
         else if(role.equals("student")){
-
+            if(item.getText().toString().equals("Complaint")){
+               Intent it = new Intent(Dashboard.this,Complaint.class);
+               startActivity(it);
+            }
         }
     }
 }

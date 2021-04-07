@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Student.Complaint"
+    android:background="@drawable/gradient_bg"
+    android:orientation="vertical"
+    android:padding="@dimen/_7sdp">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:titleTextAppearance="@dimen/_12sdp"
+        app:layout_collapseMode="pin">
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:src="@drawable/ic_back"
+            android:id="@+id/backbutton"/>
+    </androidx.appcompat.widget.Toolbar>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Want to add an image ?"
+       android:textSize="@dimen/_15sdp"
+       android:gravity="center"
+       android:textColor="@color/black"
+       android:layout_marginTop="@dimen/_70sdp"
+       android:fontFamily="@font/montserrat_black"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_7sdp"
+        android:weightSum="2"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Camera"
+            android:id="@+id/camera"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:fontFamily="@font/montserrat_semibold"
+            android:background="@drawable/button_rounded"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/_7sdp"
+            />
+
+        <Button
+            android:id="@+id/gallery"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Gallery"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:fontFamily="@font/montserrat_semibold"
+            android:background="@drawable/button_rounded"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+    <EditText
+        android:id="@+id/complaint_message"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="match_parent"
+        android:hint="Add your text here"
+        android:fontFamily="@font/montserrat_semibold"
+        android:nestedScrollingEnabled="true"
+        android:layout_height="@dimen/_100sdp"
+        android:isScrollContainer="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:background="@drawable/edit_text_border"
+        android:padding="@dimen/_10sdp"/>
+
+    <Button
+        android:id="@+id/send_complaint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:background="@drawable/button_rounded"
+        android:text="Submit"
+        android:textSize="@dimen/_15sdp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat_semibold"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+</RelativeLayout>

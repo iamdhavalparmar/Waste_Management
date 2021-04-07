@@ -48,12 +48,9 @@ public class ManageStaffAdapter extends RecyclerView.Adapter<ManageStaffAdapter.
         holder.cardstaffitemview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 itemList.remove(position);
                 listener.onItemClick(sd);
                 notifyDataSetChanged();
-
             }
         });
     }

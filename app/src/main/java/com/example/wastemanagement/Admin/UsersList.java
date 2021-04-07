@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.wastemanagement.Adapters.UsersListAdapter;
-import com.example.wastemanagement.Models.BinsData;
 import com.example.wastemanagement.Models.UserListData;
 import com.example.wastemanagement.R;
 import com.example.wastemanagement.Utils.Utils;

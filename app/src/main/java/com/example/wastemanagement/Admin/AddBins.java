@@ -59,7 +59,6 @@ public class AddBins extends AppCompatActivity implements OnMapReadyCallback, Ma
                 @Override
                 public void onStyleLoaded(@NonNull Style style) {
                     enableLocationComponent(style);
-
                     addDestinationIconSymbolLayer(style);
                     mapboxMap.addOnMapClickListener(AddBins.this);
 

@@ -12,16 +12,22 @@ import com.example.wastemanagement.R;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class FeedbackComplainAdapter extends RecyclerView.Adapter<FeedbackComplainAdapter.ViewHolder> {
     List itemlist;
     Context context;
-
-    public FeedbackComplainAdapter(List itemlist, Context context) {
+    ComplaintListener listener;
+    public FeedbackComplainAdapter(List itemlist, Context context, ComplaintListener listener) {
         this.itemlist = itemlist;
+        this.listener = listener;
         this.context = context;
     }
+    public interface ComplaintListener{
+        void OnItemClick(FeedbackComplainData complainData);
+    }
+
 
     @NonNull
     @Override
@@ -34,6 +40,13 @@ public class FeedbackComplainAdapter extends RecyclerView.Adapter<FeedbackCompla
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         FeedbackComplainData fc = (FeedbackComplainData) itemlist.get(position) ;
         holder.textView.setText(fc.getText());
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.OnItemClick(fc);
+            }
+        });
+
     }
 
     @Override
@@ -42,9 +55,11 @@ public class FeedbackComplainAdapter extends RecyclerView.Adapter<FeedbackCompla
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView textView;
+        CardView cardView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView = itemView.findViewById(R.id.feedback_complain_text);
+            cardView = itemView.findViewById(R.id.complaint_cardview);
+            textView = itemView.findViewById(R.id.feedback_complain_text_message);
         }
     }
 }
