@@ -22,7 +22,7 @@ public class Encryption {
 
     String encrypt(String data,Context context){
         RequestQueue queue  = Volley.newRequestQueue(context);
-        String url = "http://ec2-18-191-209-110.us-east-2.compute.amazonaws.com/encrypt.php";
+        String url = "https://ec2-3-16-151-249.us-east-2.compute.amazonaws.com/encrypt.php";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

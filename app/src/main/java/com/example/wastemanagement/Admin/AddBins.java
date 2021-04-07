@@ -40,9 +40,11 @@ import com.mapbox.mapboxsdk.maps.Style;
  import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
 import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
 
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -132,7 +134,6 @@ public class AddBins extends AppCompatActivity implements OnMapReadyCallback, Ma
                 @Override
                 public void onStyleLoaded(@NonNull Style style) {
                     enableLocationComponent(style);
-
                     addDestinationIconSymbolLayer(style);
                     mapboxMap.addOnMapClickListener(AddBins.this);
                 }

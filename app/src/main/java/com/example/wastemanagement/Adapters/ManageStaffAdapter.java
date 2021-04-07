@@ -52,6 +52,7 @@ public class ManageStaffAdapter extends RecyclerView.Adapter<ManageStaffAdapter.
             @Override
             public void onClick(View v) {
 
+
                 showDialog(position,sd);
 
 
@@ -80,6 +81,11 @@ public class ManageStaffAdapter extends RecyclerView.Adapter<ManageStaffAdapter.
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.cancel();
+
+                itemList.remove(position);
+                listener.onItemClick(sd);
+                notifyDataSetChanged();
+
             }
         });
         builder.show();

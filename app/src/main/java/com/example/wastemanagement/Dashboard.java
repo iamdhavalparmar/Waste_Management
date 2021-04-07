@@ -25,8 +25,12 @@ import com.example.wastemanagement.Admin.ViewAlerts;
 import com.example.wastemanagement.Fragments.AboutUsFragment;
 import com.example.wastemanagement.Fragments.ManageProfileFragment;
 import com.example.wastemanagement.Models.DashboardData;
+
 import com.example.wastemanagement.Utils.Utils;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import com.example.wastemanagement.Student.Complaint;
+
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -164,7 +168,10 @@ public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyI
             }
         }
         else if(role.equals("student")){
-
+            if(item.getText().toString().equals("Complaint")){
+               Intent it = new Intent(Dashboard.this,Complaint.class);
+               startActivity(it);
+            }
         }
     }
 
