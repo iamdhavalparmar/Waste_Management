@@ -9,16 +9,20 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="end"
     android:background="@drawable/gradient_bg">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient_bg"
-    tools:context=".Dashboard"
-    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_bg"
+        tools:context=".Dashboard">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/container"/>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".DetailOfCountry"
+
         android:background="@drawable/gradient_bg">
 
 
@@ -41,7 +45,7 @@
                     android:orientation="horizontal"
                     android:gravity="center"
                     android:padding="@dimen/_7sdp">
-                <TextView
+                <TextClock
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/date"
@@ -50,11 +54,11 @@
                     android:textSize="@dimen/_17sdp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/montserrat_regular"/>
-                <TextView
+                <TextClock
                     android:id="@+id/temp_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" 22nd February, 2021"
+
                     android:layout_gravity="center"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_17sdp"
@@ -115,19 +119,21 @@
 
 
         </androidx.core.widget.NestedScrollView>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_56sdp"
-        android:layout_gravity="bottom"
-        app:menu="@menu/bottom_navigation"
-        android:background="@color/white"
-        android:backgroundTint="@color/white"
-        app:itemTextColor="@color/black"
-        app:itemIconTint="@color/black"
-        android:theme="@style/bottomNavigation"
-        />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_gravity="bottom"
+            app:menu="@menu/bottom_navigation"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            app:itemTextColor="@color/black"
+            app:itemIconTint="@color/black"
+            android:theme="@style/bottomNavigation"
+            />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</RelativeLayout>
+
+    </RelativeLayout>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

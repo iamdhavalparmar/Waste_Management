@@ -1,37 +1,39 @@
 package com.example.wastemanagement;
-import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.wastemanagement.Adapters.DashboardAdapter;
-import com.example.wastemanagement.Admin.AddBins;
 import com.example.wastemanagement.Admin.Feedback_Complain;
 import com.example.wastemanagement.Admin.ManageBins;
 import com.example.wastemanagement.Admin.ManageStaff;
 import com.example.wastemanagement.Admin.UsersList;
 import com.example.wastemanagement.Admin.ViewAlerts;
+import com.example.wastemanagement.Fragments.AboutUsFragment;
+import com.example.wastemanagement.Fragments.ManageProfileFragment;
 import com.example.wastemanagement.Models.DashboardData;
+import com.example.wastemanagement.Utils.Utils;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyItemonClickLister {
+public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyItemonClickLister, BottomNavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageView navigation,logout;
@@ -164,5 +166,24 @@ public class Dashboard extends AppCompatActivity implements DashboardAdapter.MyI
         else if(role.equals("student")){
 
         }
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.manageprofile:
+                ManageProfileFragment manageProfileFragment = new ManageProfileFragment();
+                Utils.setMyFragment(manageProfileFragment,getSupportFragmentManager());
+                break;
+            case R.id.aboutus:
+                AboutUsFragment aboutUsFragment = new AboutUsFragment();
+                Utils.setMyFragment(aboutUsFragment,getSupportFragmentManager());
+                break;
+
+        }
+
+        return true;
     }
 }

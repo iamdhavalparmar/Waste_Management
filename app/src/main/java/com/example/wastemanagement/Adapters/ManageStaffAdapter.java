@@ -1,6 +1,7 @@
 package com.example.wastemanagement.Adapters;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.wastemanagement.Admin.ManageStaff;
 import com.example.wastemanagement.Models.StaffData;
 import com.example.wastemanagement.R;
 
@@ -20,7 +23,7 @@ public class ManageStaffAdapter extends RecyclerView.Adapter<ManageStaffAdapter.
     List itemList;
     Context context;
     MyStaffListener listener;
-
+    AlertDialog.Builder builder;
     public ManageStaffAdapter(List itemList, Context context, MyStaffListener listener) {
         this.itemList = itemList;
         this.context = context;
@@ -49,15 +52,39 @@ public class ManageStaffAdapter extends RecyclerView.Adapter<ManageStaffAdapter.
             @Override
             public void onClick(View v) {
 
+                showDialog(position,sd);
 
-                itemList.remove(position);
-                listener.onItemClick(sd);
-                notifyDataSetChanged();
 
             }
         });
-    }
 
+
+    }
+    void showDialog(int position, StaffData sd){
+
+        builder = new AlertDialog.Builder(context,R.style.CustomDialog);
+        builder.setTitle("Are You Sure To Delete ");
+        builder.setMessage("");
+
+
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                itemList.remove(position);
+                listener.onItemClick(sd);
+                notifyDataSetChanged();
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.show();
+
+    }
 
     @Override
     public int getItemCount() {

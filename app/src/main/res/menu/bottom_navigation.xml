@@ -3,10 +3,10 @@
     <item android:id="@+id/action_search"
         android:title="Home"
         android:icon="@drawable/ic_home" />
-    <item android:id="@+id/action_settings"
+    <item android:id="@+id/manageprofile"
         android:title="Manage Profile"
         android:icon="@drawable/ic_manage_profile" />
-    <item android:id="@+id/action_navigation"
+    <item android:id="@+id/aboutus"
         android:title="About Us"
         android:icon="@drawable/ic_about_us" />
 </menu>

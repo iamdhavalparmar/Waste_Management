@@ -2,24 +2,82 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#ffffff"
+   android:background="@drawable/card_rounded"
+
     android:paddingBottom="32dp">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Sophia Connors"
-        android:textColor="#292929"
+        android:text="SELECT BIN LOCATION"
+        android:textColor="#000000"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:fontFamily="@font/montserrat_black"
         android:textSize="16sp" />
+
     <TextView
-        android:id="@+id/text2"
+        android:id="@+id/binloaction"
+        android:layout_marginTop="@dimen/_15sdp"
         android:layout_below="@id/textView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Sophia Connors"
-        android:textColor="#292929"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="#000000"
+        android:textSize="@dimen/_19sdp" />
+
+    <Button
+        android:id="@+id/changelocation"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="@dimen/_20sdp"
+
+        android:background="@drawable/button_rounded"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Change"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_8sdp">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_below="@id/binloaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Sophia Connors"
+        android:textColor="#000000"
+        android:fontFamily="@font/montserrat_regular"
+        android:layout_marginTop="@dimen/_8sdp"
         android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/text3"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_10sdp">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONFIRM LOCATION"
+        android:background="@drawable/button_rounded"
+         android:layout_margin="@dimen/_8sdp"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat_black"
+        android:textColor="#ffffff"
+
+        >
+
+    </Button>
+    </LinearLayout>
 </RelativeLayout>

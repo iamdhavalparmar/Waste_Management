@@ -38,7 +38,7 @@ public class ManageStaff extends AppCompatActivity implements ManageStaffAdapter
     List stafflist = new ArrayList();
     ImageView backbutton;
     FirebaseFirestore dbroot;
-    AlertDialog.Builder builder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,7 +74,7 @@ public class ManageStaff extends AppCompatActivity implements ManageStaffAdapter
                             Timber.d("onComplete: " + document.getString("name") + " " + document.getString("phone"));
                         }
                     }
-                    ManageStaffAdapter manageStaffAdapter = new ManageStaffAdapter(stafflist,getApplicationContext(),ManageStaff.this);
+                    ManageStaffAdapter manageStaffAdapter = new ManageStaffAdapter(stafflist,ManageStaff.this,ManageStaff.this);
                     staffrecycler.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     staffrecycler.setAdapter(manageStaffAdapter);
                     myDialog.dismiss();
@@ -118,28 +118,7 @@ public class ManageStaff extends AppCompatActivity implements ManageStaffAdapter
     public void onItemClick(StaffData staffData) {
 
 
-            builder = new AlertDialog.Builder(ManageStaff.this,R.style.CustomDialog);
-        builder.setTitle("Are You Sure To Delete ");
-            builder.setMessage(staffData.name);
-
-
-            builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    delete(staffData.getId());
-                }
-            });
-
-            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.cancel();
-                }
-            });
-            builder.show();
-
-
-
+        delete(staffData.getId());
 
 
 
